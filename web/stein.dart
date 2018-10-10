@@ -13,5 +13,5 @@ class Stein {
       this.breite, this.hoehe, this.farbe, this.anzahl);
 
 
-
+String test = "";
 }
