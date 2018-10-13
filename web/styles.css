@@ -12,3 +12,15 @@ html, body {
   padding: 20px;
   text-align: center;
 }
+
+#kopfzeile {
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 0.5%;
+  margin: 0%;
+  border-bottom: 3px solid #080808;
+  border-top: 3px solid #080808;
+  text-shadow: 0 -2px #080808, 2px 0 #080808, 0 2px #080808, -2px 0 #080808;
+  background: linear-gradient(top, #0b7499 0%, #626262 100%);
+  background: -webkit-linear-gradient(top, #0b7499 0%, #626262 100%);
+}
