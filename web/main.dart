@@ -1,6 +1,6 @@
-import 'dart:html';
+import 'package:LegoLager/dartlegolager.dart';
 
 void main() {
-  querySelector('#output').text = 'Your Dart app is running.';
-  querySelector('#kopfzeile').text = 'Lego Lager';
+
+  Lagercontroller lager = new Lagercontroller();
 }
