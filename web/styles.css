@@ -19,3 +19,34 @@ html, body {
   background: linear-gradient(top, #0b7499 0%, #626262 100%);
   background: -webkit-linear-gradient(top, #0b7499 0%, #626262 100%);
 }
+
+#newbrick {
+  display: none;
+}
+#elementnummerdiv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#designnummerdiv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#namediv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#farbediv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#laengediv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#breitediv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#hoehediv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#anzahldiv {
+  margin: 0.5% 5% 0.5% 2.5%;
+}
+#speichernNewBrick {
+  margin: 5% 5% 0.5% 2.5%;
+}
