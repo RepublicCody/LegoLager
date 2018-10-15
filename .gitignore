@@ -82,3 +82,7 @@ fabric.properties
 
 
 # End of https://www.gitignore.io/api/dart,webstorm
+
+pubspec.yaml
+
+.dart_tool
