@@ -23,6 +23,11 @@ html, body {
 #newbrick {
   display: none;
 }
+
+#anzeige {
+  display: none;
+}
+
 #elementnummerdiv {
   margin: 0.5% 5% 0.5% 2.5%;
 }

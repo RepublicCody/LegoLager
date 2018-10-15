@@ -9,6 +9,8 @@ class Lagerview{
 
   final head = querySelector('#header');
 
+  final anzeige = querySelector('#anzeige');
+
   void generateHeader(){
     String headerString = "";
     headerString = '<div id="kopfzeile">Lego Lager</div>';
@@ -45,8 +47,33 @@ class Lagerview{
   newBrick.innerHtml = newBrickString;
   }
 
+  void generateAnzeige(int i){
+    String anzeigeString = "";
+    for(int x = 0; x < i; x++){
+      anzeigeString += '<div id="bild_${x}"></div><div id="beschreibung_${x}">';
+      anzeigeString += '<tbody>';
+      anzeigeString += '<tr><td id="elementnummertdl_${x}">Elementnummer:</td><td id="elementnummertdr_${x}"></td></tr>'
+          '<tr><td id="designnummertdl_${x}">Designnummer:</td><td id="designnummertdr_${x}"></td></tr>'
+          '<tr><td id="nametdl_${x}">Name:</td><td id="nametdr_${x}"></td></tr>'
+          '<tr><td id="farbetdl_${x}">Farbe:</td><td id="farbetdr_${x}"></td></tr>'
+          '<tr><td id="laengetdl_${x}">Laenge:</td><td id="laengetdr_${x}"></td></tr>'
+          '<tr><td id="breitetdl_${x}">Breite:</td><td id="breitetdr_${x}"></td></tr>'
+          '<tr><td id="hoehetdl_${x}">Hoehe:</td><td id="hoehetdr_${x}"></td></tr>'
+          '<tr><td id="anzahltdl_${x}">Anzahl:</td><td id="anzahltdr_${x}"></td></tr>';
+      anzeigeString += '</tbody></div><br><button id="anzeigeButton">Bearbeiten</button><br>';
+    }
+    anzeige.innerHtml = anzeigeString;
+  }
+
   void showNewBrick(){
     mainpage.style.display = "none";
     newBrick.style.display = "block";
+    anzeige.style.display = "none";
+  }
+
+  void showAnzeige(){
+    mainpage.style.display = "none";
+    newBrick.style.display = "none";
+    anzeige.style.display = "block";
   }
 }

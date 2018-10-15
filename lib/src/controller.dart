@@ -10,10 +10,17 @@ class Lagercontroller{
     _view.generateHeader();
     _view.generateMainPage();
     _view.generateNewBrick();
-    querySelector('#addNewBrickButtonMainpage').onClick.listen((MouseEvent e){gotoNewBrick();});
+    _view.generateAnzeige(3);
+    //querySelector('#addNewBrickButtonMainpage').onClick.listen((MouseEvent e){gotoNewBrick();});
+    querySelector('#addNewBrickButtonMainpage').onClick.listen((MouseEvent e){gotoAnzeige();});
+
   }
   
   void gotoNewBrick(){
     _view.showNewBrick();
+  }
+
+  void gotoAnzeige(){
+    _view.showAnzeige();
   }
 }
