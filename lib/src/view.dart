@@ -41,7 +41,7 @@ class Lagerview{
         '<div id="breitediv"><input id="breite">Breite</div>'
         '<div id="hoehediv"><input id="hoehe">Hoehe</div>'
         '<div id="anzahldiv"><input id="anzahl">Anzahl</div>'
-        '<button id="speichernNewBrick"(click)="addNewBrick())">Speichern</button>'
+        '<button id="speichernNewBrick">Speichern</button>'
         '</div>';
 
   newBrick.innerHtml = newBrickString;
