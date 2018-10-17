@@ -33,9 +33,9 @@ class Lagerview{
   void generateNewBrick(){
     String newBrickString = "";
     newBrickString = '<div id="formular">'
-        '<div id="elementnummerdiv"><input id="elementnummer" value="test">Elementnummer</div>'
+        '<div id="elementnummerdiv"><input id="elementnummer" value="17">Elementnummer</div>'
         '<div id="designnummerdiv"><input id="designnummer">Designnummer</div>'
-        '<div id="namediv"><input id="name">Name</div>'
+        '<div id="namediv"><input id="name" value="testing">Name</div>'
         '<div id="farbediv"><input id="farbe">Farbe</div>'
         '<div id="laengediv"><input id="laenge">Laenge</div>'
         '<div id="breitediv"><input id="breite">Breite</div>'

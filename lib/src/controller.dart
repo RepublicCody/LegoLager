@@ -45,7 +45,9 @@ class Lagercontroller{
 
     Stein stone = new Stein(elementnummer, designnummer, name, laenge, breite, hoehe, farbe, anzahl);
 
-    querySelector('#kopfzeile').text = stone.name;
+    _model.addNewBrickInFile(stone);
+
+    //querySelector('#kopfzeile').text = stone.name;
   }
 
   void gotoNewBrick(){

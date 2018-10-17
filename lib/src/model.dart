@@ -2,6 +2,20 @@ part of legolager;
 
 class Lagermodel{
 
+  void addNewBrickInFile(Stein stone){
+
+    Map m = stone.convertToMap();
+
+    var file = new File('web/stones.txt');
+    var sink = file.openWrite();
+    sink.write('FILE ACCESSED ${new DateTime.now()}\n');
+
+    // Close the IOSink to free system resources.
+    sink.close();
+
+  }
+
+
 }
 
 class Stein {
@@ -88,5 +102,18 @@ class Stein {
 
   void deleteAnzahl (){
     this.anzahl = 0;
+  }
+
+  Map convertToMap(){
+    Map m = {
+      'elementnummer':this.elementnummer,
+      'designnummer':this.designnummer,
+      'name':this.name,
+      'laenge':this.laenge,
+      'breite':this.breite,
+      'hoehe':this.hoehe,
+      'anzahl':this.anzahl
+    };
+    return m;
   }
 }

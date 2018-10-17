@@ -1,10 +1,7 @@
 library legolager;
 
-import 'dart:html';
-import 'dart:convert';
-import 'dart:math';
-import 'dart:js';
-import 'dart:async';
+import 'dart:html' hide File;
+import 'dart:io';
 
 part 'src/model.dart';
 part 'src/controller.dart';
