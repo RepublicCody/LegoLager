@@ -2,19 +2,40 @@ part of legolager;
 
 class Lagermodel{
 
-  void addNewBrickInFile(Stein stone){
+  bool checkForSimelarBricks(Stein stone){
+    bool check = false;
+    String elem = stone.elementnummer.toString();
 
-    Map m = stone.convertToMap();
+    File file = new File('stones.txt');
+    Stream<List<int>> inputStream = file.openRead();
 
-    var file = new File('web/stones.txt');
-    var sink = file.openWrite();
-    sink.write('FILE ACCESSED ${new DateTime.now()}\n');
+    inputStream
+        .transform(utf8.decoder)       // Decode bytes to UTF-8.
+        .transform(new LineSplitter()) // Convert stream to individual lines.
+        .listen((String line) {        // Process results.
+      print('$line: ${line.length} bytes');
+    },
+        onDone: () {querySelector('#kopfzeile').text = 'test';},
+        onError: (e) {querySelector('#kopfzeile').text = e; });
 
-    // Close the IOSink to free system resources.
-    sink.close();
-
+    return check;
   }
 
+
+  void addNewBrickInFile(Stein stone) {
+    String newBrickString = '[';
+    newBrickString += 'elementnummer' + ':$stone.elementnummer\n';
+    newBrickString += 'designnummer' + ':$stone.designnummer\n';
+    newBrickString += 'name' + ':$stone.name\n';
+    newBrickString += 'laenge' + ':$stone.laenge\n';
+    newBrickString += 'breite' + ':$stone.breite\n';
+    newBrickString += 'hoehe' + ':$stone.hoehe\n';
+    newBrickString += 'anzahl' + ':$stone.anzahl\n';
+    newBrickString += ']\n';
+
+    final file = File('web/stones.txt.txt');
+    file.writeAsString(newBrickString);
+  }
 
 }
 
@@ -102,18 +123,5 @@ class Stein {
 
   void deleteAnzahl (){
     this.anzahl = 0;
-  }
-
-  Map convertToMap(){
-    Map m = {
-      'elementnummer':this.elementnummer,
-      'designnummer':this.designnummer,
-      'name':this.name,
-      'laenge':this.laenge,
-      'breite':this.breite,
-      'hoehe':this.hoehe,
-      'anzahl':this.anzahl
-    };
-    return m;
   }
 }
