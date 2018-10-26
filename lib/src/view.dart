@@ -33,14 +33,15 @@ class Lagerview{
   void generateNewBrick(){
     String newBrickString = "";
     newBrickString = '<div id="formular">'
-        '<div id="elementnummerdiv"><input id="elementnummer" value="17">Elementnummer</div>'
-        '<div id="designnummerdiv"><input id="designnummer">Designnummer</div>'
-        '<div id="namediv"><input id="name" value="testing">Name</div>'
-        '<div id="farbediv"><input id="farbe">Farbe</div>'
-        '<div id="laengediv"><input id="laenge">Laenge</div>'
-        '<div id="breitediv"><input id="breite">Breite</div>'
-        '<div id="hoehediv"><input id="hoehe">Hoehe</div>'
-        '<div id="anzahldiv"><input id="anzahl">Anzahl</div>'
+        '<div id="formularhead">Neuer Stein</div>'
+        '<div id="elementnummerdiv" class="newBrickDiv"><input id="elementnummer" value="17" class="newBrickInput">Elementnummer</div>'
+        '<div id="designnummerdiv" class="newBrickDiv"><input id="designnummer" class="newBrickInput">Designnummer</div>'
+        '<div id="namediv" class="newBrickDiv"><input id="name" value="testing" class="newBrickInput">Name</div>'
+        '<div id="farbediv" class="newBrickDiv"><input id="farbe" class="newBrickInput">Farbe</div>'
+        '<div id="laengediv" class="newBrickDiv"><input id="laenge" class="newBrickInput">Laenge</div>'
+        '<div id="breitediv" class="newBrickDiv"><input id="breite" class="newBrickInput">Breite</div>'
+        '<div id="hoehediv" class="newBrickDiv"><input id="hoehe" class="newBrickInput">Hoehe</div>'
+        '<div id="anzahldiv" class="newBrickDiv"><input id="anzahl" class="newBrickInput">Anzahl</div>'
         '<button id="speichernNewBrick">Speichern</button>'
         '</div>';
 
@@ -48,7 +49,11 @@ class Lagerview{
   }
 
   void generateAnzeige(int i){
-    String anzeigeString = "";
+    String anzeigeString = '<div id="sucheAnzeige"> '
+    '<input id="suchfeldAnzeige"> '
+        '<div id="suchkategorieAnzeige"></div>'
+        '<button id="searchButtonAnzeige">Suche</button>'
+        '</div>';
     for(int x = 0; x < i; x++){
       anzeigeString += '<div id="bild_${x}"></div><div id="beschreibung_${x}">';
       anzeigeString += '<tbody>';
@@ -63,6 +68,12 @@ class Lagerview{
       anzeigeString += '</tbody></div><br><button id="anzeigeButton">Bearbeiten</button><br>';
     }
     anzeige.innerHtml = anzeigeString;
+  }
+
+  void showMainpage(){
+    mainpage.style.display = "block";
+    newBrick.style.display = "none";
+    anzeige.style.display = "none";
   }
 
   void showNewBrick(){

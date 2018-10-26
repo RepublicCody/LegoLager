@@ -39,6 +39,9 @@ class Lagermodel{
 
 }
 
+
+
+
 class Stein {
 
   int elementnummer;

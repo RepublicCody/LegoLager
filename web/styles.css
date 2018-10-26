@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
-html, body {
+html{
   width: 100%;
   height: 100%;
   margin: 0;
@@ -8,50 +8,100 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
-#kopfzeile {
-  text-transform: uppercase;
-  color: #FFFFFF;
-  padding: 0.5%;
-  margin: 0%;
-  border-bottom: 3px solid #080808;
-  border-top: 3px solid #080808;
-  text-shadow: 0 -2px #080808, 2px 0 #080808, 0 2px #080808, -2px 0 #080808;
-  background: linear-gradient(top, #0b7499 0%, #626262 100%);
-  background: -webkit-linear-gradient(top, #0b7499 0%, #626262 100%);
+@media all and (orientation: landscape) {
+  body {
+    height: 100%;
+    margin: 0 25% 0 25%;
+    padding: 0;
+    border-left: 3px solid #080808;
+    border-right: 3px solid #080808;
+  }
 }
 
-#newbrick {
-  display: none;
-}
+@media all and (orientation: portrait) {
 
-#anzeige {
-  display: none;
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
+  #kopfzeile {
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 0.5%;
+    margin: 0%;
+    border-bottom: 3px solid #080808;
+    border-top: 3px solid #080808;
+    text-shadow: 0 -2px #080808, 2px 0 #080808, 0 2px #080808, -2px 0 #080808;
+    background: linear-gradient(top, #0b7499 0%, #626262 100%);
+    background: -webkit-linear-gradient(top, #0b7499 0%, #626262 100%);
+  }
 
-#elementnummerdiv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#designnummerdiv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#namediv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#farbediv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#laengediv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#breitediv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#hoehediv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#anzahldiv {
-  margin: 0.5% 5% 0.5% 2.5%;
-}
-#speichernNewBrick {
-  margin: 5% 5% 0.5% 2.5%;
-}
+  #newbrick {
+    display: none;
+  }
+
+  #anzeige {
+    display: none;
+  }
+
+  .newBrickInput {
+    margin: 0.5% 5% 0.5% 2.5%;
+    border: 2px solid rgba(83, 83, 83, 0.74);
+  }
+
+  .newBrickDiv {
+    margin: 0.5% 5% 0.5% 2.5%;
+    color: #FFFFFF;
+    padding: 1%;
+    border: 3px solid #080808;
+    border-radius: 20px;
+    text-shadow: 0 -2px #080808, 2px 0 #080808, 0 2px #080808, -2px 0 #080808;
+    background: linear-gradient(top, #3c3c3c 0%, #222222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+  }
+
+  #elementnummerdiv {
+
+  }
+
+  #designnummerdiv {
+
+  }
+
+  #namediv {
+
+  }
+
+  #farbediv {
+
+  }
+
+  #laengediv {
+
+  }
+
+  #breitediv {
+
+  }
+
+  #hoehediv {
+
+  }
+
+  #anzahldiv {
+
+  }
+
+  #speichernNewBrick {
+    margin: 5% 5% 0.5% 2.5%;
+    color: #FFFFFF;
+    padding: 1%;
+    border: 3px solid #080808;
+    border-radius: 20px;
+    text-shadow: 0 -2px #080808, 2px 0 #080808, 0 2px #080808, -2px 0 #080808;
+    background: linear-gradient(top, #3c3c3c 0%, #222222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
+  }

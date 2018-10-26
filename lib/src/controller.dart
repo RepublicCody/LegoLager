@@ -14,6 +14,7 @@ class Lagercontroller{
     _view.generateNewBrick();
     _view.generateAnzeige(3);
     querySelector('#addNewBrickButtonMainpage').onClick.listen((MouseEvent e){gotoNewBrick();});
+    querySelector('#searchButtonMainpage').onClick.listen((MouseEvent e){gotoAnzeige();});
     //querySelector('#addNewBrickButtonMainpage').onClick.listen((MouseEvent e){gotoAnzeige();});
     querySelector('#speichernNewBrick').onClick.listen((MouseEvent e){createNewBrick();});
   }
@@ -49,6 +50,10 @@ class Lagercontroller{
 
     _model.checkForSimelarBricks(stone);
     //querySelector('#kopfzeile').text = stone.name;
+  }
+
+  void gotoMainpage(){
+    _view.showMainpage();
   }
 
   void gotoNewBrick(){
