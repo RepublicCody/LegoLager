@@ -1,40 +1,59 @@
 part of legolager;
 
+class LagerListe{
+
+
+
+}
+
 class Lagermodel{
 
-  bool checkForSimelarBricks(Stein stone){
+  List<Stein> liste = [];
+
+  bool addStein(Stein stone){
     bool check = false;
-    String elem = stone.elementnummer.toString();
+    int elem = stone.elementnummer;
+    int listelem;
 
-    File file = new File('stones.txt');
-    Stream<List<int>> inputStream = file.openRead();
-
-    inputStream
-        .transform(utf8.decoder)       // Decode bytes to UTF-8.
-        .transform(new LineSplitter()) // Convert stream to individual lines.
-        .listen((String line) {        // Process results.
-      print('$line: ${line.length} bytes');
-    },
-        onDone: () {querySelector('#kopfzeile').text = 'test';},
-        onError: (e) {querySelector('#kopfzeile').text = e; });
-
+    for(int i = 0; i < liste.length; i++){
+      listelem = liste[i].elementnummer;
+      if(listelem == elem)check = true;
+    }
+    if(check == false){
+      liste.add(stone);
+    }
     return check;
   }
 
+  void fillList(List<String> fileList){
+
+    for(int x = 0; x < fileList.length; x ++){
+
+    }
+
+  }
+
+  List<String> readFile(){
+    List<String> result = [];
+    return result;
+  }
+
+  void writeFile(String s){
+
+  }
 
   void addNewBrickInFile(Stein stone) {
-    String newBrickString = '[';
-    newBrickString += 'elementnummer' + ':$stone.elementnummer\n';
-    newBrickString += 'designnummer' + ':$stone.designnummer\n';
-    newBrickString += 'name' + ':$stone.name\n';
-    newBrickString += 'laenge' + ':$stone.laenge\n';
-    newBrickString += 'breite' + ':$stone.breite\n';
-    newBrickString += 'hoehe' + ':$stone.hoehe\n';
-    newBrickString += 'anzahl' + ':$stone.anzahl\n';
-    newBrickString += ']\n';
+    String newBrickString = '{';
+    newBrickString += 'elementnummer' + ':$stone.elementnummer,';
+    newBrickString += 'designnummer' + ':$stone.designnummer,';
+    newBrickString += 'name' + ':$stone.name,';
+    newBrickString += 'laenge' + ':$stone.laenge,';
+    newBrickString += 'breite' + ':$stone.breite,';
+    newBrickString += 'hoehe' + ':$stone.hoehe,';
+    newBrickString += 'anzahl' + ':$stone.anzahl,';
+    newBrickString += '},';
 
-    final file = File('web/stones.txt.txt');
-    file.writeAsString(newBrickString);
+    writeFile(newBrickString);
   }
 
 }

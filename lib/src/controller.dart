@@ -48,7 +48,7 @@ class Lagercontroller{
 
 //    _model.addNewBrickInFile(stone);
 
-    _model.checkForSimelarBricks(stone);
+    _model.addStein(stone);
     //querySelector('#kopfzeile').text = stone.name;
   }
 
