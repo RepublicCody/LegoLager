@@ -25,6 +25,19 @@ class Lagermodel{
     return check;
   }
 
+  Stein getStone (int elem){
+    int listelem;
+    Stein reStone;
+    for(int i = 0; i < liste.length; i++){
+      listelem = liste[i].elementnummer;
+      if(listelem == elem)reStone = liste[i];
+    }
+    return reStone;
+    }
+
+  /**
+   * Hier soll der Inhalt des json Dokuments in die Liste List<Stein> liste gefüllt werden
+   */
   void fillList(List<String> fileList){
 
     for(int x = 0; x < fileList.length; x ++){
@@ -38,22 +51,22 @@ class Lagermodel{
     return result;
   }
 
-  void writeFile(String s){
+  void writeFile(List<Stein> l){
 
   }
 
-  void addNewBrickInFile(Stein stone) {
-    String newBrickString = '{';
-    newBrickString += 'elementnummer' + ':$stone.elementnummer,';
-    newBrickString += 'designnummer' + ':$stone.designnummer,';
-    newBrickString += 'name' + ':$stone.name,';
-    newBrickString += 'laenge' + ':$stone.laenge,';
-    newBrickString += 'breite' + ':$stone.breite,';
-    newBrickString += 'hoehe' + ':$stone.hoehe,';
-    newBrickString += 'anzahl' + ':$stone.anzahl,';
-    newBrickString += '},';
+  String steinToString (Stein stone) {
+    String st = '{';
+    st += 'elementnummer' + ':$stone.elementnummer,';
+    st += 'designnummer' + ':$stone.designnummer,';
+    st += 'name' + ':$stone.name,';
+    st += 'laenge' + ':$stone.laenge,';
+    st += 'breite' + ':$stone.breite,';
+    st += 'hoehe' + ':$stone.hoehe,';
+    st += 'anzahl' + ':$stone.anzahl,';
+    st += '},';
 
-    writeFile(newBrickString);
+    return st;
   }
 
 }

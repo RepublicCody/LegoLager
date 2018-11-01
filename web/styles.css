@@ -56,11 +56,8 @@ html{
     margin: 0.5% 5% 0.5% 2.5%;
     color: #FFFFFF;
     padding: 1%;
-    border: 3px solid #080808;
-    border-radius: 20px;
+    border: 3px solid rgba(83, 83, 83, 0.74);
     text-shadow: 0 -2px #080808, 2px 0 #080808, 0 2px #080808, -2px 0 #080808;
-    background: linear-gradient(top, #3c3c3c 0%, #222222 100%);
-    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222222 100%);
   }
 
   #elementnummerdiv {

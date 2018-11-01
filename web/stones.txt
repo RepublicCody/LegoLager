@@ -1,1 +1,9 @@
-yeah
+{
+'elementnummer:123456,
+'designnummer:34445,
+'name:teststein1,
+'laenge:3,
+'breite:2,
+'hoehe:17,
+'anzahl:42,
+},
