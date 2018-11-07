@@ -21,11 +21,15 @@ class Lagerview{
 
   void generateMainPage(){
     String mainpageString ="";
-    mainpageString = '<div id="suche"> '
-        '<input id="suchfeld"> '
-        '<div id="suchkategorie"></div>'
-        '<button id="searchButtonMainpage">Suche</button>'
-        '<button id="addNewBrickButtonMainpage">Neuer Stein</button>'
+    mainpageString = '<div id="mainpageSuche"> '
+        '<div id="mainpageSuchkategorie">'
+        '<div id="mainpageSuchkategorieElementnummer>"><input id="mainpageSuchfeldElementnummer"></div>'
+        '<div id="mainpageSuchkategorieDesignnummer>"><input id="mainpageSuchfeldDesignnummer"></div>'
+        '<div id="mainpageSuchkategorieName>"><input id="mainpageSuchfeldName"></div>'
+        '</div>'
+        '<button id="mainpageSearchButton">Suche</button>'
+        '<button id="mainpageAddNewBrickButton">Neuer Stein</button>'
+        '<button id="mainpageSearchAllBricks">Alle Steine</button>'
         '</div>';
   //querySelector('#kopfzeile').text = 'Lego Lager';
 
@@ -91,10 +95,18 @@ class Lagerview{
   }
 
   void generateAnzeige(int i){
-    String anzeigeString = '<div id="sucheAnzeige"> '
-    '<input id="suchfeldAnzeige"> '
-        '<div id="suchkategorieAnzeige"></div>'
-        '<button id="searchButtonAnzeige">Suche</button>';
+    String anzeigeString = '<div id="anzeigeSuche"> '
+        '<div id="anzeigeSuchkategorie">'
+        '<div id="anzeigeSuchkategorieElementnummer>"><input id="anzeigeSuchfeldElementnummer"></div>'
+        '<div id="anzeigeSuchkategorieDesignnummer>"><input id="anzeigeSuchfeldDesignnummer"></div>'
+        '<div id="anzeigeSuchkategorieName>"><input id="anzeigeSuchfeldName"></div>'
+        '</div>'
+        '<button id="anzeigeSearchButton">Erneut suchen</button>'
+        '<button id="anzeigeAddNewBrickButton">Neuer Stein</button>'
+        '<button id="anzeigeSearchAllBricks">Alle Steine</button>'
+        '<div id="anzeigeErgebnis"></div>'
+        '</div>';
+
     for(int x = 0; x < i; x++){
       anzeigeString += '<div id="bild_${x}"></div><div id="beschreibung_${x}">';
       anzeigeString += '<tbody>';

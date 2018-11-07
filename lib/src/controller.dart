@@ -12,13 +12,26 @@ class Lagercontroller{
     _view.generateHeader();
     _view.generateMainPage();
     _view.generateNewBrick();
-    _view.generateAnzeige(3);
-    querySelector('#addNewBrickButtonMainpage').onClick.listen((MouseEvent e){gotoNewBrick();});
-    querySelector('#searchButtonMainpage').onClick.listen((MouseEvent e){gotoAnzeige();});
-    querySelector('#anzeigeButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
-    querySelector('#newBrickButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
+    querySelector('#mainpageAddNewBrickButton').onClick.listen((MouseEvent e){gotoNewBrick();});
+    querySelector('#mainpageSearchButton').onClick.listen(mainpageSuche);
+
     querySelector('#speichernNewBrick').onClick.listen((MouseEvent e){createNewBrick();});
     querySelector('#sucheAnzeige').onClick.listen(selectBrickToEdit);
+
+    //Startseite
+    querySelector('#anzeigeButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
+    querySelector('#newBrickButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
+
+    //mainpage
+
+    //newBrick
+
+    //editBrick
+
+    //head
+
+    //anzeige
+
   }
 
   void createNewBrick(){
@@ -53,6 +66,33 @@ class Lagercontroller{
     _model.addStein(stone);
     //querySelector('#kopfzeile').text = stone.name;
   }
+
+  void mainpageSuche(MouseEvent e){
+    int ergebnisAnzahl = 3;
+    String tmp = "";
+    bool suchInhalt = false;
+    _view.generateAnzeige(ergebnisAnzahl);
+    InputElement iE = querySelector('#mainpageSuchfeldElementnummer');
+    InputElement iD = querySelector('#mainpageSuchfeldDesignnummer');
+    InputElement iN = querySelector('#mainpageSuchfeldName');
+
+    if(iE.value != ""){
+      tmp = iE.value;
+      suchInhalt = true;
+    }
+    else if(iD.value != ""){
+      tmp = iD.value;
+      suchInhalt = true;
+    }
+    else if(iN.value != ""){
+      tmp = iN.value;
+      suchInhalt = true;
+    }
+    if(ergebnisAnzahl == 1)querySelector('#anzeigeErgebnis').text = ergebnisAnzahl.toString() + " Ergebnis für \"" + tmp + "\"";
+    else querySelector('#anzeigeErgebnis').text = ergebnisAnzahl.toString() + " Ergebnisse für \"" + tmp + "\"";
+    if(suchInhalt == true)gotoAnzeige();
+  }
+
 
   void selectBrickToEdit(MouseEvent e) {
     if (e.target is Element){
