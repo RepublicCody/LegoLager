@@ -108,6 +108,7 @@ class Lagerview{
         '</div>';
 
     for(int x = 0; x < i; x++){
+      anzeigeString += '<div id="ergebnis_${x}"';
       anzeigeString += '<div id="bild_${x}"></div><div id="beschreibung_${x}">';
       anzeigeString += '<tbody>';
       anzeigeString += '<tr><td id="elementnummertdl_${x}">Elementnummer:</td><td id="elementnummertdr_${x}"></td></tr>'
@@ -118,7 +119,7 @@ class Lagerview{
           '<tr><td id="breitetdl_${x}">Breite:</td><td id="breitetdr_${x}"></td></tr>'
           '<tr><td id="hoehetdl_${x}">Hoehe:</td><td id="hoehetdr_${x}"></td></tr>'
           '<tr><td id="anzahltdl_${x}">Anzahl:</td><td id="anzahltdr_${x}"></td></tr>';
-      anzeigeString += '</tbody></div><br><button id="anzeigeButton_${x}">Bearbeiten</button><br>';
+      anzeigeString += '</tbody></div><br><button id="anzeigeButton_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button><br></div>';
     }
     anzeigeString += '<button id="anzeigeButtonMainpage">Startseite</button></div>';
     anzeige.innerHtml = anzeigeString;

@@ -7,6 +7,16 @@ class Lagercontroller{
   Lagerview _view = new Lagerview();
 
 
+  Stein st1 = new Stein(123456789, 136712, "test1", 1, 2, 3, "gelb", 2);
+  Stein st2 = new Stein(223456789, 236712, "test2", 1, 2, 3, "gelb", 790);
+  Stein st3 = new Stein(323456789, 336712, "test3", 1, 2, 3, "gelb", 9000);
+  Stein st4 = new Stein(423456789, 436712, "test4", 1, 2, 3, "gelb", 0);
+
+
+
+
+
+
 
   Lagercontroller(){
     _view.generateHeader();
@@ -16,7 +26,7 @@ class Lagercontroller{
     querySelector('#mainpageSearchButton').onClick.listen(mainpageSuche);
 
     querySelector('#speichernNewBrick').onClick.listen((MouseEvent e){createNewBrick();});
-    querySelector('#sucheAnzeige').onClick.listen(selectBrickToEdit);
+    querySelector('.anzeigeButtonBearbeiten').onClick.listen(selectBrickToEdit);
 
     //Startseite
     querySelector('#anzeigeButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
@@ -68,10 +78,10 @@ class Lagercontroller{
   }
 
   void mainpageSuche(MouseEvent e){
-    int ergebnisAnzahl = 3;
+    int ergebnisAnzahl;
     String tmp = "";
+    List<Stein> l = [];
     bool suchInhalt = false;
-    _view.generateAnzeige(ergebnisAnzahl);
     InputElement iE = querySelector('#mainpageSuchfeldElementnummer');
     InputElement iD = querySelector('#mainpageSuchfeldDesignnummer');
     InputElement iN = querySelector('#mainpageSuchfeldName');
@@ -88,11 +98,35 @@ class Lagercontroller{
       tmp = iN.value;
       suchInhalt = true;
     }
-    if(ergebnisAnzahl == 1)querySelector('#anzeigeErgebnis').text = ergebnisAnzahl.toString() + " Ergebnis für \"" + tmp + "\"";
-    else querySelector('#anzeigeErgebnis').text = ergebnisAnzahl.toString() + " Ergebnisse für \"" + tmp + "\"";
-    if(suchInhalt == true)gotoAnzeige();
+
+    if(suchInhalt == true){
+
+      ergebnisAnzahl = 3;
+      l.add(st1);
+      l.add(st2);
+      l.add(st3);
+      _view.generateAnzeige(ergebnisAnzahl);
+      if(ergebnisAnzahl == 1)querySelector('#anzeigeErgebnis').text = ergebnisAnzahl.toString() + " Ergebnis für \"" + tmp + "\"";
+      else querySelector('#anzeigeErgebnis').text = ergebnisAnzahl.toString() + " Ergebnisse für \"" + tmp + "\"";
+      fillAnzeige(l, ergebnisAnzahl);
+      gotoAnzeige();
+    }
   }
 
+  void fillAnzeige(List<Stein> suche, int ergebnisAnzahl){
+    int p = 0;
+    print(querySelector('#elementnummertdl_${p}').text);/*
+    for (int x = 0; x < ergebnisAnzahl; x++){
+      querySelector('#elementnummertdr_${x}').text = suche[x].elementnummer.toString();
+      querySelector('#designnummertdr_${x}').text = suche[x].designnummer.toString();
+      querySelector('#nametdr_${x}').text = suche[x].name.toString();
+      querySelector('#farbetdr_${x}').text = suche[x].farbe.toString();
+      querySelector('#laengetdr_${x}').text = suche[x].laenge.toString();
+      querySelector('#breitetdr_${x}').text = suche[x].breite.toString();
+      querySelector('#hoehetdr_${x}').text = suche[x].hoehe.toString();
+      querySelector('#anzahltdr_${x}').text = suche[x].anzahl.toString();
+    }*/
+  }
 
   void selectBrickToEdit(MouseEvent e) {
     if (e.target is Element){
