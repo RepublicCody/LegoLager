@@ -108,18 +108,21 @@ class Lagerview{
         '</div>';
 
     for(int x = 0; x < i; x++){
-      anzeigeString += '<div id="ergebnis_${x}"';
-      anzeigeString += '<div id="bild_${x}"></div><div id="beschreibung_${x}">';
-      anzeigeString += '<tbody>';
-      anzeigeString += '<tr><td id="elementnummertdl_${x}">Elementnummer:</td><td id="elementnummertdr_${x}"></td></tr>'
-          '<tr><td id="designnummertdl_${x}">Designnummer:</td><td id="designnummertdr_${x}"></td></tr>'
-          '<tr><td id="nametdl_${x}">Name:</td><td id="nametdr_${x}"></td></tr>'
-          '<tr><td id="farbetdl_${x}">Farbe:</td><td id="farbetdr_${x}"></td></tr>'
-          '<tr><td id="laengetdl_${x}">Laenge:</td><td id="laengetdr_${x}"></td></tr>'
-          '<tr><td id="breitetdl_${x}">Breite:</td><td id="breitetdr_${x}"></td></tr>'
-          '<tr><td id="hoehetdl_${x}">Hoehe:</td><td id="hoehetdr_${x}"></td></tr>'
-          '<tr><td id="anzahltdl_${x}">Anzahl:</td><td id="anzahltdr_${x}"></td></tr>';
-      anzeigeString += '</tbody></div><br><button id="anzeigeButton_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button><br></div>';
+      anzeigeString += '<div id="ergebnis_${x}" class="anzeigeTabelle">'
+          '<div id="bild_${x}" class="anzeigeBilder"></div>'
+          '<div id="beschreibung_${x}" class="anzeigeBeschreibungen">'
+            '<table>'
+              '<tr><td id="elementnummertdl_${x}">Elementnummer:</td><td><div id="elementnummertdr_${x}" class="anzeigeEl"></div></td></tr>'
+              '<tr><td id="designnummertdl_${x}">Designnummer:</td><td><div id="designnummertdr_${x}"class="anzeigeDe"></div></td></tr>'
+              '<tr><td id="nametdl_${x}">Name:</td><td><div id="nametdr_${x}"class="anzeigeNa"></div></td></tr>'
+              '<tr><td id="farbetdl_${x}">Farbe:</td><td><div id="farbetdr_${x}"class="anzeigeFa"></div></td></tr>'
+              '<tr><td id="laengetdl_${x}">Laenge:</td><td><div id="laengetdr_${x}"class="anzeigeLa"></div></td></tr>'
+              '<tr><td id="breitetdl_${x}">Breite:</td><td><div id="breitetdr_${x}"class="anzeigeBr"></div></td></tr>'
+              '<tr><td id="hoehetdl_${x}">Hoehe:</td><td><div id="hoehetdr_${x}"class="anzeigeHo"></div></td></tr>'
+              '<tr><td id="anzahltdl_${x}">Anzahl:</td><td><div id="anzahltdr_${x}"class="anzeigeAn"></div></td></tr>'
+            '</table>'
+          '</tbody></div><br>'
+          '<button id="anzeigeButton_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button><br></div>';
     }
     anzeigeString += '<button id="anzeigeButtonMainpage">Startseite</button></div>';
     anzeige.innerHtml = anzeigeString;

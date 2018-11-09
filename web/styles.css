@@ -60,6 +60,44 @@ html{
     text-shadow: 0 -2px #080808, 2px 0 #080808, 0 2px #080808, -2px 0 #080808;
   }
 
+  .anzeigeTabelle {
+    border: 2px solid rgba(83, 83, 83, 0.74);
+  }
+  .anzeigeBilder {
+    width: 30%;
+    border: 2px solid red;
+  }
+  .anzeigeBeschreibungen {
+    width: 70%;
+    left: 50%;
+    border: 2px solid blue;
+  }
+
+  .anzeigeEl {
+    width: 20%;
+  }
+  .anzeigeDe {
+    width: 20%;
+  }
+  .anzeigeNa {
+    width: 20%;
+  }
+  .anzeigeLa {
+    width: 20%;
+  }
+  .anzeigeBr {
+    width: 20%;
+  }
+  .anzeigeHo {
+    width: 20%;
+  }
+  .anzeigeAn {
+    width: 20%;
+  }
+
+
+
+
   #elementnummerdiv {
 
   }

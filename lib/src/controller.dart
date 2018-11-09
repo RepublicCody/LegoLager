@@ -26,7 +26,7 @@ class Lagercontroller{
     querySelector('#mainpageSearchButton').onClick.listen(mainpageSuche);
 
     querySelector('#speichernNewBrick').onClick.listen((MouseEvent e){createNewBrick();});
-    querySelector('.anzeigeButtonBearbeiten').onClick.listen(selectBrickToEdit);
+    querySelectorAll('.anzeigeButtonBearbeiten').onClick.listen(selectBrickToEdit);
 
     //Startseite
     querySelector('#anzeigeButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
@@ -115,7 +115,6 @@ class Lagercontroller{
 
   void fillAnzeige(List<Stein> suche, int ergebnisAnzahl){
     int p = 0;
-    print(querySelector('#elementnummertdl_${p}').text);/*
     for (int x = 0; x < ergebnisAnzahl; x++){
       querySelector('#elementnummertdr_${x}').text = suche[x].elementnummer.toString();
       querySelector('#designnummertdr_${x}').text = suche[x].designnummer.toString();
@@ -125,7 +124,7 @@ class Lagercontroller{
       querySelector('#breitetdr_${x}').text = suche[x].breite.toString();
       querySelector('#hoehetdr_${x}').text = suche[x].hoehe.toString();
       querySelector('#anzahltdr_${x}').text = suche[x].anzahl.toString();
-    }*/
+    }
   }
 
   void selectBrickToEdit(MouseEvent e) {
