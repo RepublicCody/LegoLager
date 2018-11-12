@@ -10,11 +10,18 @@ html{
 
 @media all and (orientation: landscape) {
   body {
+    position: fixed;
     height: 100%;
-    margin: 0 25% 0 25%;
+    width: 70vw;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+
     padding: 0;
     border-left: 3px solid #080808;
     border-right: 3px solid #080808;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
   }
 }
 
@@ -65,6 +72,7 @@ html{
   }
   .anzeigeBilder {
     width: 30%;
+    left: 0;
     border: 2px solid red;
   }
   .anzeigeBeschreibungen {
@@ -82,13 +90,10 @@ html{
   .anzeigeNa {
     width: 20%;
   }
+  .anzeigeMa {
+    width: 20%;
+  }
   .anzeigeLa {
-    width: 20%;
-  }
-  .anzeigeBr {
-    width: 20%;
-  }
-  .anzeigeHo {
     width: 20%;
   }
   .anzeigeAn {
@@ -114,15 +119,11 @@ html{
 
   }
 
-  #laengediv {
+  #massediv {
 
   }
 
-  #breitediv {
-
-  }
-
-  #hoehediv {
+  #lagerortdiv {
 
   }
 

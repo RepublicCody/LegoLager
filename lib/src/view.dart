@@ -21,7 +21,7 @@ class Lagerview{
 
   void generateMainPage(){
     String mainpageString ="";
-    mainpageString = '<div id="mainpageSuche"> '
+    mainpageString = '<div id="mainpageSuche">'
         '<div id="mainpageSuchkategorie">'
         '<div id="mainpageSuchkategorieElementnummer>"><input id="mainpageSuchfeldElementnummer"></div>'
         '<div id="mainpageSuchkategorieDesignnummer>"><input id="mainpageSuchfeldDesignnummer"></div>'
@@ -74,14 +74,11 @@ class Lagerview{
         '<div id="farbedivEditBrick" class="editBrickDiv"><input id="farbeEditBrick" value="${stone.farbe}" class="editBrickInput">Farbe</div>'
         '<div id="farbedivEditBrickOld" class="editBrickDivOld" value="${stone.farbe}">Alte Farbe</div>'
 
-        '<div id="laengedivEditBrick" class="editBrickDiv"><input id="laengeEditBrick" value="${stone.laenge}" class="editBrickInput">Laenge</div>'
-        '<div id="laengedivEditBrickOld" class="editBrickDivOld" value="${stone.laenge}">Alte Laenge</div>'
+        '<div id="massedivEditBrick" class="editBrickDiv"><input id="masseEditBrick" value="${stone.masse}" class="editBrickInput">Masse</div>'
+        '<div id="massedivEditBrickOld" class="editBrickDivOld" value="${stone.masse}">Alte Masse</div>'
 
-        '<div id="breitedivEditBrick" class="editBrickDiv"><input id="breiteEditBrick" value="${stone.breite}" class="editBrickInput">Breite</div>'
-        '<div id="breitedivEditBrickOld" class="editBrickDivOld" value="${stone.breite}">Alte Breite</div>'
-
-        '<div id="hoehedivEditBrick" class="editBrickDiv"><input id="hoeheEditBrick" value="${stone.hoehe}" class="editBrickInput">Hoehe</div>'
-        '<div id="hoehedivEditBrickOld" class="editBrickDivOld" value="${stone.hoehe}">Alte Hoehe</div>'
+        '<div id="lagerortdivEditBrick" class="editBrickDiv"><input id="lagerortEditBrick" value="${stone.lagerort}" class="editBrickInput">Lagerort</div>'
+        '<div id="lagerortdivEditBrickOld" class="editBrickDivOld" value="${stone.lagerort}">Alter Lagerort</div>'
 
         '<div id="anzahldivEditBrick" class="editBrickDiv"><input id="anzahlEditBrick" value="${stone.anzahl}" class="editBrickInput">Anzahl</div>'
         '<div id="anzahldivEditBrickOld" class="editBrickDivOld" value="${stone.anzahl}">Alte Anzahl</div>'
@@ -116,12 +113,11 @@ class Lagerview{
               '<tr><td id="designnummertdl_${x}">Designnummer:</td><td><div id="designnummertdr_${x}"class="anzeigeDe"></div></td></tr>'
               '<tr><td id="nametdl_${x}">Name:</td><td><div id="nametdr_${x}"class="anzeigeNa"></div></td></tr>'
               '<tr><td id="farbetdl_${x}">Farbe:</td><td><div id="farbetdr_${x}"class="anzeigeFa"></div></td></tr>'
-              '<tr><td id="laengetdl_${x}">Laenge:</td><td><div id="laengetdr_${x}"class="anzeigeLa"></div></td></tr>'
-              '<tr><td id="breitetdl_${x}">Breite:</td><td><div id="breitetdr_${x}"class="anzeigeBr"></div></td></tr>'
-              '<tr><td id="hoehetdl_${x}">Hoehe:</td><td><div id="hoehetdr_${x}"class="anzeigeHo"></div></td></tr>'
+              '<tr><td id="massetdl_${x}">Masse:</td><td><div id="massetdr_${x}"class="anzeigeMa"></div></td></tr>'
+              '<tr><td id="lagerorttdl_${x}">Lagerort:</td><td><div id="lagerorttdr_${x}"class="anzeigeLa"></div></td></tr>'
               '<tr><td id="anzahltdl_${x}">Anzahl:</td><td><div id="anzahltdr_${x}"class="anzeigeAn"></div></td></tr>'
             '</table>'
-          '</tbody></div><br>'
+          '</tbody></div>'
           '<button id="anzeigeButton_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button><br></div>';
     }
     anzeigeString += '<button id="anzeigeButtonMainpage">Startseite</button></div>';

@@ -7,10 +7,10 @@ class Lagercontroller{
   Lagerview _view = new Lagerview();
 
 
-  Stein st1 = new Stein(123456789, 136712, "test1", 1, 2, 3, "gelb", 2);
-  Stein st2 = new Stein(223456789, 236712, "test2", 1, 2, 3, "gelb", 790);
-  Stein st3 = new Stein(323456789, 336712, "test3", 1, 2, 3, "gelb", 9000);
-  Stein st4 = new Stein(423456789, 436712, "test4", 1, 2, 3, "gelb", 0);
+  Stein st1 = new Stein(123456789, 136712, "test1", "1x2x3", "Kiste 3", "gelb", 2);
+  Stein st2 = new Stein(223456789, 236712, "test2", "1x2x3", "Kiste 42", "gelber", 790);
+  Stein st3 = new Stein(323456789, 336712, "test3", "1x2x3", "Kiste 7", "am gelbesten", 9000);
+  Stein st4 = new Stein(423456789, 436712, "test4", "1x2x3", "Kiste 1", "scheiße gelb", 0);
 
 
 
@@ -54,14 +54,11 @@ class Lagercontroller{
     ind = querySelector('#nameNewBrick');
     String name = ind.value;
 
-    ind = querySelector('#laengeNewBrick');
-    int laenge = int.tryParse(ind.value);
+    ind = querySelector('#masseNewBrick');
+    String masse = ind.value;
 
-    ind = querySelector('#breiteNewBrick');
-    int breite = int.tryParse(ind.value);
-
-    ind = querySelector('#hoeheNewBrick');
-    int hoehe = int.tryParse(ind.value);
+    ind = querySelector('#lagerortNewBrick');
+    String lagerort = ind.value;
 
     ind = querySelector('#farbeNewBrick');
     String farbe = ind.value;
@@ -69,7 +66,7 @@ class Lagercontroller{
     ind = querySelector('#anzahlNewBrick');
     int anzahl = int.tryParse(ind.value);
 
-    Stein stone = new Stein(elementnummer, designnummer, name, laenge, breite, hoehe, farbe, anzahl);
+    Stein stone = new Stein(elementnummer, designnummer, name, masse, lagerort, farbe, anzahl);
 
 //    _model.addNewBrickInFile(stone);
 
@@ -120,9 +117,8 @@ class Lagercontroller{
       querySelector('#designnummertdr_${x}').text = suche[x].designnummer.toString();
       querySelector('#nametdr_${x}').text = suche[x].name.toString();
       querySelector('#farbetdr_${x}').text = suche[x].farbe.toString();
-      querySelector('#laengetdr_${x}').text = suche[x].laenge.toString();
-      querySelector('#breitetdr_${x}').text = suche[x].breite.toString();
-      querySelector('#hoehetdr_${x}').text = suche[x].hoehe.toString();
+      querySelector('#massetdr_${x}').text = suche[x].masse.toString();
+      querySelector('#lagerorttdr_${x}').text = suche[x].lagerort.toString();
       querySelector('#anzahltdr_${x}').text = suche[x].anzahl.toString();
     }
   }

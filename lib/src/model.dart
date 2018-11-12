@@ -79,14 +79,12 @@ class Stein {
   int elementnummer;
   int designnummer;
   String name;
-  int laenge;
-  int breite;
-  int hoehe;
+  String masse;
+  String lagerort;
   String farbe;
   int anzahl;
 
-  Stein(this.elementnummer, this.designnummer, this.name, this.laenge,
-      this.breite, this.hoehe, this.farbe, this.anzahl);
+  Stein(this.elementnummer, this.designnummer, this.name, this.masse, this.lagerort, this.farbe, this.anzahl);
 
   int getElemtnummer(){
     return this.elementnummer;
@@ -109,25 +107,20 @@ class Stein {
     this.name = name;
   }
 
-  int getlaenge(){
-    return this.laenge;
-  }
-  void setLaenge(int laenge){
-    this.laenge = laenge;
+  String getMasse(){
+    return this.masse;
   }
 
-  int getBreite(){
-    return this.breite;
-  }
-  void setbreite(int breite){
-    this.breite = breite;
+  void setMasse(String masse){
+    this.masse = masse;
   }
 
-  int getHoehe(){
-    return this.hoehe;
+  String getLagerort(){
+    return this.lagerort;
   }
-  void setHoehe(int hoehe){
-    this.hoehe = hoehe;
+
+  void setLagerort(String lagerort){
+    this.lagerort = lagerort;
   }
 
   String getFarbe(){
@@ -142,10 +135,6 @@ class Stein {
   }
   void setAnzahl(int anzahl){
     this.anzahl = anzahl;
-  }
-
-  String getMasse(){
-    return this.laenge.toString() + "x" + this.breite.toString() + "x" + this.hoehe.toString();
   }
 
   void addAnzahl (int added){
