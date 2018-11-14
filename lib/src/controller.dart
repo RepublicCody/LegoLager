@@ -22,8 +22,8 @@ class Lagercontroller{
     _view.generateHeader();
     _view.generateMainPage();
     _view.generateNewBrick();
-    querySelector('#mainpageAddNewBrickButton').onClick.listen((MouseEvent e){gotoNewBrick();});
-    querySelector('#mainpageSearchButton').onClick.listen(mainpageSuche);
+    fillMainpageSteine();
+
 
     querySelector('#speichernNewBrick').onClick.listen((MouseEvent e){createNewBrick();});
     querySelectorAll('.anzeigeButtonBearbeiten').onClick.listen(selectBrickToEdit);
@@ -33,6 +33,10 @@ class Lagercontroller{
     querySelector('#newBrickButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
 
     //mainpage
+
+    querySelector('#mainpageAddNewBrickButton').onClick.listen((MouseEvent e){gotoNewBrick();});
+    querySelector('#mainpageSearchButton').onClick.listen(mainpageSuche);
+
 
     //newBrick
 
@@ -111,7 +115,6 @@ class Lagercontroller{
   }
 
   void fillAnzeige(List<Stein> suche, int ergebnisAnzahl){
-    int p = 0;
     for (int x = 0; x < ergebnisAnzahl; x++){
       querySelector('#elementnummertdr_${x}').text = suche[x].elementnummer.toString();
       querySelector('#designnummertdr_${x}').text = suche[x].designnummer.toString();
@@ -121,6 +124,17 @@ class Lagercontroller{
       querySelector('#lagerorttdr_${x}').text = suche[x].lagerort.toString();
       querySelector('#anzahltdr_${x}').text = suche[x].anzahl.toString();
     }
+  }
+
+  void fillMainpageSteine(){
+    int alleSteine = 0;
+    int verschiedeneSteine = 0;
+
+    verschiedeneSteine = 42;
+    alleSteine = 1337;
+
+    querySelector('#mainpageAnzahlAlleSteineAusgabe').text = alleSteine.toString();
+    querySelector('#mainpageAnzahlVerschiedeneSteineAusgabe').text = verschiedeneSteine.toString();
   }
 
   void selectBrickToEdit(MouseEvent e) {

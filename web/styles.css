@@ -100,6 +100,80 @@ html{
     width: 20%;
   }
 
+  #mainpageAnzahlAlleSteine {
+    position: fixed;
+    width: 160px;
+    height: 80px;
+    left: 25%;
+    top: 15%;
+    border-radius: 4px;
+    border: 3px solid rgba(83, 83, 83, 0.74);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  #mainpageAnzahlAlleSteineText {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  #mainpageAnzahlAlleSteineAusgabe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  #mainpageAnzahlVerschiedeneSteine {
+    position: fixed;
+    width: 160px;
+    height: 80px;
+    top: 15%;
+    left: 75%;
+    border-radius: 4px;
+    border: 3px solid rgba(83, 83, 83, 0.74);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  #mainpageAnzahlVerschiedeneSteineText {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  #mainpageAnzahlVerschiedeneSteineAusgabe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+
+  #mainpageSuchkategorie {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+
 
 
 

@@ -60,9 +60,9 @@ class Lagermodel{
     st += 'elementnummer' + ':$stone.elementnummer,';
     st += 'designnummer' + ':$stone.designnummer,';
     st += 'name' + ':$stone.name,';
-    st += 'laenge' + ':$stone.laenge,';
-    st += 'breite' + ':$stone.breite,';
-    st += 'hoehe' + ':$stone.hoehe,';
+    st += 'masse' + ':$stone.masse,';
+    st += 'lagerort' + ':$stone.lagerort,';
+    st += 'farbe' + ':$stone.farbe,';
     st += 'anzahl' + ':$stone.anzahl,';
     st += '},';
 
