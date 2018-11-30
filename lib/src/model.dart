@@ -57,13 +57,15 @@ class Lagermodel{
 
   String steinToString (Stein stone) {
     String st = '{';
-    st += 'elementnummer' + ':$stone.elementnummer,';
-    st += 'designnummer' + ':$stone.designnummer,';
-    st += 'name' + ':$stone.name,';
-    st += 'masse' + ':$stone.masse,';
-    st += 'lagerort' + ':$stone.lagerort,';
-    st += 'farbe' + ':$stone.farbe,';
-    st += 'anzahl' + ':$stone.anzahl,';
+    st += 'elementnummer' + ':${stone.elementnummer},';
+    st += 'designnummer' + ':${stone.designnummer},';
+    st += 'name' + ':${stone.name},';
+    st += 'masse' + ':${stone.masse},';
+    st += 'lagerort' + ':${stone.lagerort},';
+    st += 'farbe' + ':${stone.farbe},';
+    st += 'bild' + ':${stone.bild},';
+    st += 'anzahl' + ':${stone.anzahl},';
+    st += 'nachbestellen' + ':${stone.nachbestellen},';
     st += '},';
 
     return st;
@@ -82,9 +84,11 @@ class Stein {
   String masse;
   String lagerort;
   String farbe;
+  String bild;
   int anzahl;
+  bool nachbestellen;
 
-  Stein(this.elementnummer, this.designnummer, this.name, this.masse, this.lagerort, this.farbe, this.anzahl);
+  Stein(this.elementnummer, this.designnummer, this.name, this.masse, this.lagerort, this.farbe, this.bild, this.anzahl, this.nachbestellen);
 
   int getElemtnummer(){
     return this.elementnummer;
@@ -130,6 +134,13 @@ class Stein {
     this.farbe = farbe;
   }
 
+  String getBild(){
+    return this.bild;
+  }
+  void setBild(String bild){
+    this.bild = bild;
+  }
+
   int getAnzahl(){
     return this.anzahl;
   }
@@ -147,5 +158,16 @@ class Stein {
 
   void deleteAnzahl (){
     this.anzahl = 0;
+  }
+
+  bool getNachbestellen(){
+    return this.nachbestellen;
+  }
+  void setNachbestellenTrue(){
+    this.nachbestellen = true;
+  }
+
+  void setNachbestellenFalse(){
+    this.nachbestellen = false;
   }
 }

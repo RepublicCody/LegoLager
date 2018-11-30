@@ -15,7 +15,7 @@ class Lagerview{
 
   void generateHeader(){
     String headerString = "";
-    headerString = '<div id="kopfzeile">Lego Lager</div>';
+    headerString = '<div id="kopfzeile">Lego Lager<button id="headerButtonMainpage">Startseite</button></div>';
     head.innerHtml = headerString;
   }
 
@@ -40,7 +40,7 @@ class Lagerview{
         '</div>'
         '<button id="mainpageSearchButton">Suche</button>'
         '<button id="mainpageAddNewBrickButton">Neuer Stein</button>'
-        '<button id="mainpageSearchAllBricks">Alle Steine</button>'
+        '<button id="mainpageSearchAllBricksButton">Alle Steine</button>'
         '</div>';
   //querySelector('#kopfzeile').text = 'Lego Lager';
 
@@ -49,54 +49,64 @@ class Lagerview{
 
   void generateNewBrick(){
     String newBrickString = "";
-    newBrickString = '<div id="formularNewBrick">'
-        '<div id="formularNewBrickhead">Neuer Stein</div>'
-        '<div id="formularNewBrickbody">'
-        '<div id="elementnummerdivNewBrick" class="newBrickDiv"><input id="elementnummerNewBrick" value="17" class="newBrickInput">Elementnummer</div>'
-        '<div id="designnummerdivNewBrick" class="newBrickDiv"><input id="designnummerNewBrick" class="newBrickInput">Designnummer</div>'
-        '<div id="namedivNewBrick" class="newBrickDiv"><input id="nameNewBrick" value="testing" class="newBrickInput">Name</div>'
-        '<div id="farbedivNewBrick" class="newBrickDiv"><input id="farbeNewBrick" class="newBrickInput">Farbe</div>'
-        '<div id="laengedivNewBrick" class="newBrickDiv"><input id="laengeNewBrick" class="newBrickInput">Laenge</div>'
-        '<div id="breitedivNewBrick" class="newBrickDiv"><input id="breiteNewBrick" class="newBrickInput">Breite</div>'
-        '<div id="hoehedivNewBrick" class="newBrickDiv"><input id="hoeheNewBrick" class="newBrickInput">Hoehe</div>'
-        '<div id="anzahldivNewBrick" class="newBrickDiv"><input id="anzahlNewBrick" class="newBrickInput">Anzahl</div>'
-        '</div>'
-        '<button id="speichernNewBrick">Speichern</button>'
-        '<button id="newBrickButtonMainpage">Startseite</button>'
+    newBrickString =''
+        '<div id="newBrickFormular">'
+          '<div id="newBrickFormularHead">Neuer Stein</div>'
+          '<div id="newBrickFormularBody">'
+            '<div id="newBrickElementnummerDiv" class="newBrickDiv"><input id="newBrickElementnummer" value="17" class="newBrickInput">Elementnummer</div>'
+            '<div id="newBrickDesignnummerDiv" class="newBrickDiv"><input id="newBrickDesignnummer" class="newBrickInput">Designnummer</div>'
+            '<div id="newBrickNameDiv" class="newBrickDiv"><input id="newBrickName" value="testing" class="newBrickInput">Name</div>'
+            '<div id="newBrickFarbeDiv" class="newBrickDiv"><input id="newBrickFarbe" class="newBrickInput">Farbe</div>'
+            '<div id="newBrickMasseDiv" class="newBrickDiv"><input id="newBrickMasse" class="newBrickInput">Masse</div>'
+            '<div id="newBrickLagerortDiv" class="newBrickDiv"><input id="newBrickLagerort" class="newBrickInput">Lagerort</div>'
+            '<div id="newBrickAnzahlDiv" class="newBrickDiv"><input id="newBrickAnzahl" class="newBrickInput">Anzahl</div>'
+            '<div id="newBrickNachbestellenDiv" class="newBrickDiv"><input id="newBrickNachbestellen" class="newBrickCheckbox" type="checkbox">Nachbestellen</div>'
+          '</div>'
+          '<button id="newBrickSpeichern">Speichern</button>'
         '</div>';
 
   newBrick.innerHtml = newBrickString;
   }
 
-  void generateEditBrick(Stein stone){
+  void generateEditBrick(){
     String editBrickString = "";
     editBrickString = '<div id="formularEditBrick">'
         '<div id="formularEditBrickhead">Neuer Stein</div>'
         '<div id="formularEditBrickbody">'
-        '<div id="elementnummerdivEditBrick" class="editBrickDiv"><input id="elementnummerEditBrick" value="${stone.elementnummer}" class="editBrickInput">Elementnummer</div>'
-        '<div id="elementnummerdivEditBrickOld" class="editBrickDivOld" value="${stone.elementnummer}>"Alte Elementnummer</div>'
+        '<div id="elementnummerdivEditBrick" class="editBrickDiv"><input id="elementnummerEditBrick" class="editBrickInput">Elementnummer</div>'
+        '<div id="elementnummerdivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Elementnummer</div>'
+        '<div id="elementnummerdivEditBrickOldRight" class="editBrickDivOldRight"></div>'
 
-        '<div id="designnummerdivEditBrick" class="editBrickDiv"><input id="designnummerEditBrick" value="${stone.designnummer}" class="editBrickInput">Designnummer</div>'
-        '<div id="designnummerdivEditBrickOld" class="editBrickDivOld" value="${stone.designnummer}">Alte Designnummer</div>'
+        '<div id="designnummerdivEditBrick" class="editBrickDiv"><input id="designnummerEditBrick" class="editBrickInput">Designnummer</div>'
+        '<div id="designnummerdivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Designnummer</div>'
+        '<div id="designnummerdivEditBrickOldRight" class="editBrickDivOldRight"></div>'
 
-        '<div id="namedivEditBrick" class="editBrickDiv"><input id="nameEditBrick" value="${stone.name}" class="editBrickInput">Name</div>'
-        '<div id="namedivEditBrickOld" class="editBrickDivOld" value="${stone.name}">Alter Name</div>'
+        '<div id="namedivEditBrick" class="editBrickDiv"><input id="nameEditBrick" class="editBrickInput">Name</div>'
+        '<div id="namedivEditBrickOldLeft" class="editBrickDivOldLeft">Alter Name</div>'
+        '<div id="namedivEditBrickOldRight" class="editBrickDivOldRight"></div>'
 
-        '<div id="farbedivEditBrick" class="editBrickDiv"><input id="farbeEditBrick" value="${stone.farbe}" class="editBrickInput">Farbe</div>'
-        '<div id="farbedivEditBrickOld" class="editBrickDivOld" value="${stone.farbe}">Alte Farbe</div>'
+        '<div id="farbedivEditBrick" class="editBrickDiv"><input id="farbeEditBrick" class="editBrickInput">Farbe</div>'
+        '<div id="farbedivEditBrickOldLeft" class="editBrickDivOldLeftt">Alte Farbe</div>'
+        '<div id="farbedivEditBrickOldRight" class="editBrickDivOldRight"></div>'
 
-        '<div id="massedivEditBrick" class="editBrickDiv"><input id="masseEditBrick" value="${stone.masse}" class="editBrickInput">Masse</div>'
-        '<div id="massedivEditBrickOld" class="editBrickDivOld" value="${stone.masse}">Alte Masse</div>'
+        '<div id="massedivEditBrick" class="editBrickDiv"><input id="masseEditBrick" class="editBrickInput">Masse</div>'
+        '<div id="massedivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Masse</div>'
+        '<div id="massedivEditBrickOldRight" class="editBrickDivOldRight"></div>'
 
-        '<div id="lagerortdivEditBrick" class="editBrickDiv"><input id="lagerortEditBrick" value="${stone.lagerort}" class="editBrickInput">Lagerort</div>'
-        '<div id="lagerortdivEditBrickOld" class="editBrickDivOld" value="${stone.lagerort}">Alter Lagerort</div>'
+        '<div id="lagerortdivEditBrick" class="editBrickDiv"><input id="lagerortEditBrick" class="editBrickInput">Lagerort</div>'
+        '<div id="lagerortdivEditBrickOldLeft" class="editBrickDivOldLeft">Alter Lagerort</div>'
+        '<div id="lagerortdivEditBrickOldRight" class="editBrickDivOldRight"></div>'
 
-        '<div id="anzahldivEditBrick" class="editBrickDiv"><input id="anzahlEditBrick" value="${stone.anzahl}" class="editBrickInput">Anzahl</div>'
-        '<div id="anzahldivEditBrickOld" class="editBrickDivOld" value="${stone.anzahl}">Alte Anzahl</div>'
+        '<div id="anzahldivEditBrick" class="editBrickDiv"><input id="anzahlEditBrick" class="editBrickInput">Anzahl</div>'
+        '<div id="anzahldivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Anzahl</div>'
+        '<div id="anzahldivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+
+        '<div id="nachbestellendivEditBrick" class="editBrickDiv"><input id="nachbestellenEditBrick" class="editBrickCheckbox" type="checkbox">Nachbestellen</div>'
+        '<div id="nachbestellendivEditBrickOldLeft" class="editBrickDivOldLeft">Wurde Nachbestellt</div>'
+        '<input id="nachbestellenEditBrickOldRight" class="editBrickCheckboxOldRight" type="checkbox" disabled>'
 
         '</div>'
         '<button id="speichernEditBrick">Speichern</button>'
-        '<button id="editBrickButtonMainpage">Startseite</button>'
         '</div>';
 
     editBrick.innerHtml = editBrickString;
@@ -105,9 +115,9 @@ class Lagerview{
   void generateAnzeige(int i){
     String anzeigeString = '<div id="anzeigeSuche"> '
         '<div id="anzeigeSuchkategorie">'
-        '<div id="anzeigeSuchkategorieElementnummer>"><input id="anzeigeSuchfeldElementnummer"></div>'
-        '<div id="anzeigeSuchkategorieDesignnummer>"><input id="anzeigeSuchfeldDesignnummer"></div>'
-        '<div id="anzeigeSuchkategorieName>"><input id="anzeigeSuchfeldName"></div>'
+          '<div id="anzeigeSuchkategorieElementnummer>"><input id="anzeigeSuchfeldElementnummer"></div>'
+          '<div id="anzeigeSuchkategorieDesignnummer>"><input id="anzeigeSuchfeldDesignnummer"></div>'
+          '<div id="anzeigeSuchkategorieName>"><input id="anzeigeSuchfeldName"></div>'
         '</div>'
         '<button id="anzeigeSearchButton">Erneut suchen</button>'
         '<button id="anzeigeAddNewBrickButton">Neuer Stein</button>'
@@ -117,21 +127,22 @@ class Lagerview{
 
     for(int x = 0; x < i; x++){
       anzeigeString += '<div id="ergebnis_${x}" class="anzeigeTabelle">'
-          '<div id="bild_${x}" class="anzeigeBilder"></div>'
-          '<div id="beschreibung_${x}" class="anzeigeBeschreibungen">'
-            '<table>'
-              '<tr><td id="elementnummertdl_${x}">Elementnummer:</td><td><div id="elementnummertdr_${x}" class="anzeigeEl"></div></td></tr>'
-              '<tr><td id="designnummertdl_${x}">Designnummer:</td><td><div id="designnummertdr_${x}"class="anzeigeDe"></div></td></tr>'
-              '<tr><td id="nametdl_${x}">Name:</td><td><div id="nametdr_${x}"class="anzeigeNa"></div></td></tr>'
-              '<tr><td id="farbetdl_${x}">Farbe:</td><td><div id="farbetdr_${x}"class="anzeigeFa"></div></td></tr>'
-              '<tr><td id="massetdl_${x}">Masse:</td><td><div id="massetdr_${x}"class="anzeigeMa"></div></td></tr>'
-              '<tr><td id="lagerorttdl_${x}">Lagerort:</td><td><div id="lagerorttdr_${x}"class="anzeigeLa"></div></td></tr>'
-              '<tr><td id="anzahltdl_${x}">Anzahl:</td><td><div id="anzahltdr_${x}"class="anzeigeAn"></div></td></tr>'
-            '</table>'
-          '</tbody></div>'
-          '<button id="anzeigeButton_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button><br></div>';
+          '<div id="bild_${x}" class="anzeigeBilder">'
+          '<button id="anzeigeButton_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button>'
+          '</div>'
+            '<div id="beschreibung_${x}" class="anzeigeBeschreibungen">'
+              '<table>'
+                '<tr><td id="elementnummertdl_${x}">Elementnummer:</td><td class="anzeigeEl"><div id="elementnummertdr_${x}"></div></td></tr>'
+                '<tr><td id="designnummertdl_${x}">Designnummer:</td><td class="anzeigeDe"><div id="designnummertdr_${x}"></div></td></tr>'
+                '<tr><td id="nametdl_${x}">Name:</td><td class="anzeigeNa"><div id="nametdr_${x}"></div></td></tr>'
+                '<tr><td id="farbetdl_${x}">Farbe:</td><td class="anzeigeFa"><div id="farbetdr_${x}"></div></td></tr>'
+                '<tr><td id="massetdl_${x}">Masse:</td><td class="anzeigeMa"><div id="massetdr_${x}"></div></td></tr>'
+                '<tr><td id="lagerorttdl_${x}">Lagerort:</td><td class="anzeigeLa"><div id="lagerorttdr_${x}"></div></td></tr>'
+                '<tr><td id="anzahltdl_${x}">Anzahl:</td><td class="anzeigeAn"><div id="anzahltdr_${x}"></div></td></tr>'
+                '<tr><td id="nachbestellentdl_${x}">Nachbestellung:</td><td class="anzeigeNac"><input id="nachbestellentdr_${x}" type="checkbox"></td></tr>'
+              '</table>'
+            '</div></div>';
     }
-    anzeigeString += '<button id="anzeigeButtonMainpage">Startseite</button></div>';
     anzeige.innerHtml = anzeigeString;
   }
 
