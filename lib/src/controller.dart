@@ -37,16 +37,16 @@ class Lagercontroller{
 
     //editBrick
 
+    querySelector('#editBrickSpeichern').onClick.listen((MouseEvent e){editBrick();});
+
     //head
 
     querySelector('#headerButtonMainpage').onClick.listen((MouseEvent e){gotoMainpage();});
 
     //anzeige
 
-    //querySelectorAll('#anzeige .anzeigeButtonBearbeiten').onClick.listen(selectBrickToEdit);
-    querySelectorAll('#anzeige .anzeigeButtonBearbeiten').onClick.listen((MouseEvent e){print('Kekse');});
-    print("hallo");
-    //querySelector('#anzeigeButton_1').onClick.listen((MouseEvent e){gotoEditBrick();});
+    querySelectorAll('.anzeigeButtonBearbeiten').onClick.listen(selectBrickToEdit);
+    //querySelectorAll('.anzeigeButtonBearbeiten').onClick.listen((MouseEvent e){print('Kekse');});
 
   }
 
@@ -127,7 +127,7 @@ class Lagercontroller{
   }
 
   /**
-   *  TODO: nachbestellen
+   *  T
    */
   void fillAnzeige(List<Stein> suche, int ergebnisAnzahl){
     for (int x = 0; x < ergebnisAnzahl; x++){
@@ -138,8 +138,7 @@ class Lagercontroller{
       querySelector('#massetdr_${x}').text = suche[x].masse.toString();
       querySelector('#lagerorttdr_${x}').text = suche[x].lagerort.toString();
       querySelector('#bild_${x}').style.backgroundImage = 'url(${suche[x].bild.toString()})';
-      //if(suche[x].nachbestellen == true)querySelector('#nachbestellen_${x}').setAttribute('value', 'true');
-      //else querySelector('#nachbestellen_${x}').setAttribute('value', 'false');
+      if(suche[x].nachbestellen == true)querySelector('#nachbestellentdr_${x}').setAttribute('checked', '');
       querySelector('#anzahltdr_${x}').text = suche[x].anzahl.toString();
     }
   }
@@ -155,29 +154,31 @@ class Lagercontroller{
     querySelector('#mainpageAnzahlVerschiedeneSteineAusgabe').text = verschiedeneSteine.toString();
   }
   /**
-   *  TODO: nachbestellen
+   *
    */
   void fillEditBrick(Stein stone){
-        querySelector("#elementnummerdivEditBrick").text = stone.elementnummer.toString();
-        querySelector("#elementnummerdivEditBrickOldRight").text = stone.elementnummer.toString();
+        querySelector("#editBrickElementnummer").setAttribute('value', stone.elementnummer.toString());
+        querySelector("#editBrickElementnummerDivOldRight").text = stone.elementnummer.toString();
 
-        querySelector("#designnummerdivEditBrick").text = stone.designnummer.toString();
-        querySelector("#designnummerdivEditBrickOldRight").text = stone.designnummer.toString();
+        querySelector("#editBrickDesignnummer").setAttribute('value', stone.designnummer.toString());
+        querySelector("#editBrickDesignnummerDivOldRight").text = stone.designnummer.toString();
 
-        querySelector("#namedivEditBrick").text =  stone.name.toString();
-            querySelector("#namedivEditBrickOldRight").text = stone.name.toString();
+        querySelector("#editBrickName").setAttribute('value', stone.name.toString());
+        querySelector("#editBrickNameDivOldRight").text = stone.name.toString();
 
-        querySelector("#farbedivEditBrick").text = stone.farbe.toString();
-        querySelector("#farbedivEditBrickOldRight").text = stone.farbe.toString();
+        querySelector("#editBrickFarbe").setAttribute('value', stone.farbe.toString());
+        querySelector("#editBrickFarbeDivOldRight").text = stone.farbe.toString();
 
-        querySelector("#massedivEditBrick").text = stone.masse.toString();
-        querySelector("#massedivEditBrickOldRight").text = stone.masse.toString();
+        querySelector("#editBrickMasse").setAttribute('value', stone.masse.toString());
+        querySelector("#editBrickMasseDivOldRight").text = stone.masse.toString();
 
-        querySelector("#lagerortdivEditBrick").text = stone.lagerort.toString();
-        querySelector("#lagerortdivEditBrickOldRight").text = stone.lagerort.toString();
+        querySelector("#editBrickLagerort").setAttribute('value', stone.lagerort.toString());
+        querySelector("#editBrickLagerortDivOldRight").text = stone.lagerort.toString();
 
-        querySelector("#anzahldivEditBrick").text = stone.anzahl.toString();
-        querySelector("#anzahldivEditBrickOldRight").text = stone.anzahl.toString();
+        if(stone.nachbestellen == true)querySelector('#editBrickNachbestellenOldRight').setAttribute('checked', '');
+
+        querySelector("#editBrickAnzahl").setAttribute('value', stone.anzahl.toString());
+        querySelector("#editBrickAnzahlDivOldRight").text = stone.anzahl.toString();
   }
 
   void selectBrickToEdit(MouseEvent e) {
@@ -204,6 +205,55 @@ class Lagercontroller{
       }*/
       gotoEditBrick();
     }
+  }
+
+  void editBrick() {
+    InputElement ind = querySelector('#editBrickElementnummer');
+    int elementnummer = int.tryParse(ind.value);
+
+    ind = querySelector('#editBrickDesignnummer');
+    int designnummer = int.tryParse(ind.value);
+
+    ind = querySelector('#editBrickName');
+    String name = ind.value;
+
+    ind = querySelector('#editBrickMasse');
+    String masse = ind.value;
+
+    ind = querySelector('#editBrickLagerort');
+    String lagerort = ind.value;
+
+    ind = querySelector('#editBrickFarbe');
+    String farbe = ind.value;
+
+    String bild = "images/$elementnummer.png";
+
+    ind = querySelector('#editBrickAnzahl');
+    int anzahl = int.tryParse(ind.value);
+
+    ind = querySelector('#editBrickNachbestellen');
+
+    bool nachbestellen;
+    if (ind.toString() == 'true')
+      nachbestellen = true;
+    else
+      nachbestellen = false;
+    /**TODO: stein edititeren*/
+    Stein stone = new Stein(
+        elementnummer,
+        designnummer,
+        name,
+        masse,
+        lagerort,
+        farbe,
+        bild,
+        anzahl,
+        nachbestellen);
+
+//    _model.addNewBrickInFile(stone);
+
+    _model.addStein(stone);
+    //querySelector('#kopfzeile').text = stone.name;
   }
 
   void gotoMainpage(){

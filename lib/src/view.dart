@@ -34,11 +34,12 @@ class Lagerview{
         '</div>'
 
         '<div id="mainpageSuchkategorie">'
-        '<div id="mainpageSuchkategorieElementnummer>">Elementnummer<input id="mainpageSuchfeldElementnummer"></div>'
+        '<div id="mainpageSuchkategorieElementnummer>">Elementnummer<input id="mainpageSuchfeldElementnummer" value="kaese"></div>'
         '<div id="mainpageSuchkategorieDesignnummer>">Designnummer<input id="mainpageSuchfeldDesignnummer"></div>'
         '<div id="mainpageSuchkategorieName>">Name<input id="mainpageSuchfeldName"></div>'
         '</div>'
         '<button id="mainpageSearchButton">Suche</button>'
+        '<button id="mainpageNachbestellungButton">Nachbestellung</button>'
         '<button id="mainpageAddNewBrickButton">Neuer Stein</button>'
         '<button id="mainpageSearchAllBricksButton">Alle Steine</button>'
         '</div>';
@@ -60,7 +61,7 @@ class Lagerview{
             '<div id="newBrickMasseDiv" class="newBrickDiv"><input id="newBrickMasse" class="newBrickInput">Masse</div>'
             '<div id="newBrickLagerortDiv" class="newBrickDiv"><input id="newBrickLagerort" class="newBrickInput">Lagerort</div>'
             '<div id="newBrickAnzahlDiv" class="newBrickDiv"><input id="newBrickAnzahl" class="newBrickInput">Anzahl</div>'
-            '<div id="newBrickNachbestellenDiv" class="newBrickDiv"><input id="newBrickNachbestellen" class="newBrickCheckbox" type="checkbox">Nachbestellen</div>'
+            '<div id="newBrickNachbestellenDiv" class="newBrickDiv">Nachbestellen<input id="newBrickNachbestellen" class="newBrickCheckbox" type="checkbox"></div>'
           '</div>'
           '<button id="newBrickSpeichern">Speichern</button>'
         '</div>';
@@ -70,43 +71,49 @@ class Lagerview{
 
   void generateEditBrick(){
     String editBrickString = "";
-    editBrickString = '<div id="formularEditBrick">'
-        '<div id="formularEditBrickhead">Neuer Stein</div>'
-        '<div id="formularEditBrickbody">'
-        '<div id="elementnummerdivEditBrick" class="editBrickDiv"><input id="elementnummerEditBrick" class="editBrickInput">Elementnummer</div>'
-        '<div id="elementnummerdivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Elementnummer</div>'
-        '<div id="elementnummerdivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+    editBrickString += '<div id="editBrickFormular">'
+        '<div id="editBrickFormularHead">Neuer Stein</div>'
+        '<div id="editBrickFormularBody">'
 
-        '<div id="designnummerdivEditBrick" class="editBrickDiv"><input id="designnummerEditBrick" class="editBrickInput">Designnummer</div>'
-        '<div id="designnummerdivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Designnummer</div>'
-        '<div id="designnummerdivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+        '<div id="editBrickElementnummerDiv"><input id="editBrickElementnummer">Elementnummer</div>'
+        '<div id="editBrickElementnummerDivOldLeft">Alte Elementnummer</div>'
+        '<div id="editBrickElementnummerDivOldRight"></div>'
 
-        '<div id="namedivEditBrick" class="editBrickDiv"><input id="nameEditBrick" class="editBrickInput">Name</div>'
-        '<div id="namedivEditBrickOldLeft" class="editBrickDivOldLeft">Alter Name</div>'
-        '<div id="namedivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+        '<div id="editBrickDesignnummerDiv"><input id="editBrickDesignnummer">Designnummer</div>'
+        '<div id="editBrickDesignnummerDivOldLeft">Alte Designnummer</div>'
+        '<div id="editBrickDesignnummerDivOldRight"></div>'
 
-        '<div id="farbedivEditBrick" class="editBrickDiv"><input id="farbeEditBrick" class="editBrickInput">Farbe</div>'
-        '<div id="farbedivEditBrickOldLeft" class="editBrickDivOldLeftt">Alte Farbe</div>'
-        '<div id="farbedivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+        '<div id="editBrickNameDiv"><input id="editBrickName">Name</div>'
+        '<div id="editBrickNameDivOldLeft">Alter Name</div>'
+        '<div id="editBrickNameDivOldRight"></div>'
 
-        '<div id="massedivEditBrick" class="editBrickDiv"><input id="masseEditBrick" class="editBrickInput">Masse</div>'
-        '<div id="massedivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Masse</div>'
-        '<div id="massedivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+        '<div id="editBrickFarbeDiv"><input id="editBrickFarbe">Farbe</div>'
+        '<div id="editBrickFarbeDivOldLeft">Alte Farbe</div>'
+        '<div id="editBrickFarbeDivOldRight"></div>'
 
-        '<div id="lagerortdivEditBrick" class="editBrickDiv"><input id="lagerortEditBrick" class="editBrickInput">Lagerort</div>'
-        '<div id="lagerortdivEditBrickOldLeft" class="editBrickDivOldLeft">Alter Lagerort</div>'
-        '<div id="lagerortdivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+        '<div id="editBrickMasseDiv"><input id="editBrickMasse">Masse</div>'
+        '<div id="editBrickMasseDivOldLeft">Alte Masse</div>'
+        '<div id="editBrickMasseDivOldRight"></div>'
 
-        '<div id="anzahldivEditBrick" class="editBrickDiv"><input id="anzahlEditBrick" class="editBrickInput">Anzahl</div>'
-        '<div id="anzahldivEditBrickOldLeft" class="editBrickDivOldLeft">Alte Anzahl</div>'
-        '<div id="anzahldivEditBrickOldRight" class="editBrickDivOldRight"></div>'
+        '<div id="editBrickLagerortDiv"><input id="editBrickLagerort">Lagerort</div>'
+        '<div id="editBrickLagerortDivOldLeft">Alter Lagerort</div>'
+        '<div id="editBrickLagerortDivOldRight"></div>'
 
-        '<div id="nachbestellendivEditBrick" class="editBrickDiv"><input id="nachbestellenEditBrick" class="editBrickCheckbox" type="checkbox">Nachbestellen</div>'
-        '<div id="nachbestellendivEditBrickOldLeft" class="editBrickDivOldLeft">Wurde Nachbestellt</div>'
-        '<input id="nachbestellenEditBrickOldRight" class="editBrickCheckboxOldRight" type="checkbox" disabled>'
+        '<div id="editBrickAnzahlDiv"><input id="editBrickAnzahl">Anzahl</div>'
+        '<div id="editBrickAnzahlDivOldLeft">Alte Anzahl</div>'
+        '<div id="editBrickAnzahlDivOldRight"></div>'
+        '<button id="editBrickPlusOneButton">+</button>'
+        '<button id="editBrickMinusOneButton">-</button>'
+        '<button id="editBrickZeroButton">0</button>'
+        '<input id="editBrickAdd">'
+        '<button id="editBrickAddButton">Addieren</button>'
+
+        '<div id="editBrickNachbestellenDiv"><input id="editBrickNachbestellen" type="checkbox">Nachbestellen</div>'
+        '<div id="editBrickNachbestellenDivOldLeft">Wurde Nachbestellt</div>'
+        '<input id="editBrickNachbestellenOldRight" type="checkbox">'
 
         '</div>'
-        '<button id="speichernEditBrick">Speichern</button>'
+        '<button id="editBrickSpeichern">Speichern</button>'
         '</div>';
 
     editBrick.innerHtml = editBrickString;
@@ -128,7 +135,7 @@ class Lagerview{
     for(int x = 0; x < i; x++){
       anzeigeString += '<div id="ergebnis_${x}" class="anzeigeTabelle">'
           '<div id="bild_${x}" class="anzeigeBilder">'
-          '<button id="anzeigeButton_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button>'
+          '<button id="anzeigeButtonBearbeiten_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button>'
           '</div>'
             '<div id="beschreibung_${x}" class="anzeigeBeschreibungen">'
               '<table>'
@@ -138,7 +145,7 @@ class Lagerview{
                 '<tr><td id="farbetdl_${x}">Farbe:</td><td class="anzeigeFa"><div id="farbetdr_${x}"></div></td></tr>'
                 '<tr><td id="massetdl_${x}">Masse:</td><td class="anzeigeMa"><div id="massetdr_${x}"></div></td></tr>'
                 '<tr><td id="lagerorttdl_${x}">Lagerort:</td><td class="anzeigeLa"><div id="lagerorttdr_${x}"></div></td></tr>'
-                '<tr><td id="anzahltdl_${x}">Anzahl:</td><td class="anzeigeAn"><div id="anzahltdr_${x}"></div></td></tr>'
+                '<tr><td id="anzahltdl_${x}">Anzahl:</td><td class="anzeigeAn"><div id="anzahltdr_${x}" class="anzeigeAnzahlZahl"></div></td></tr>'
                 '<tr><td id="nachbestellentdl_${x}">Nachbestellung:</td><td class="anzeigeNac"><input id="nachbestellentdr_${x}" type="checkbox"></td></tr>'
               '</table>'
             '</div></div>';

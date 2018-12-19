@@ -159,6 +159,10 @@ html{
     top: 65%;
   }
 
+  #newBrickNachbestellenDiv {
+    top: 75%;
+  }
+
   #newBrickSpeichern {
     position: absolute;
     left: 50%;
@@ -236,6 +240,30 @@ html{
 
   }
 
+  .anzeigeAnzahlZahl {
+    width: 30%;
+  }
+
+  .anzeigePlusOneButton {
+
+  }
+
+  .anzeigeMinusOneButton {
+
+  }
+
+  .anzeigeZeroButton {
+
+  }
+
+  .anzeigeAdd {
+    width: 25%;
+  }
+
+  .anzeigeAddButton {
+
+  }
+
   .anzeigeButtonBearbeiten {
     z-index: 2;
     position: absolute;
@@ -265,7 +293,7 @@ html{
 
 
 
-
+/*     Mainpage Anfang     */
 
   #mainpageDaten {
     position: fixed;
@@ -362,12 +390,24 @@ html{
     -ms-transform: translate(-50%, -50%);
   }
 
+  #mainpageNachbestellungButton {
+    position: fixed;
+    width: 25%;
+    height: 6%;
+    left: 20%;
+    top: 95%;
+    border-radius: 4px;
+    border: 3px solid rgba(83, 83, 83, 0.74);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
   #mainpageAddNewBrickButton {
     position: fixed;
     width: 25%;
     height: 6%;
     left: 50%;
-    top: 80%;
+    top: 95%;
     border-radius: 4px;
     border: 3px solid rgba(83, 83, 83, 0.74);
     transform: translate(-50%, -50%);
@@ -379,7 +419,7 @@ html{
     width: 25%;
     height: 6%;
     left: 80%;
-    top: 80%;
+    top: 95%;
     border-radius: 4px;
     border: 3px solid rgba(83, 83, 83, 0.74);
     transform: translate(-50%, -50%);
