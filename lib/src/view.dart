@@ -122,9 +122,9 @@ class Lagerview{
   void generateAnzeige(int i){
     String anzeigeString = '<div id="anzeigeSuche"> '
         '<div id="anzeigeSuchkategorie">'
-          '<div id="anzeigeSuchkategorieElementnummer>"><input id="anzeigeSuchfeldElementnummer"></div>'
-          '<div id="anzeigeSuchkategorieDesignnummer>"><input id="anzeigeSuchfeldDesignnummer"></div>'
-          '<div id="anzeigeSuchkategorieName>"><input id="anzeigeSuchfeldName"></div>'
+          '<div id="anzeigeSuchkategorieElementnummer"><input id="anzeigeSuchfeldElementnummer"></div>'
+          '<div id="anzeigeSuchkategorieDesignnummer"><input id="anzeigeSuchfeldDesignnummer"></div>'
+          '<div id="anzeigeSuchkategorieName"><input id="anzeigeSuchfeldName"></div>'
         '</div>'
         '<button id="anzeigeSearchButton">Erneut suchen</button>'
         '<button id="anzeigeAddNewBrickButton">Neuer Stein</button>'
@@ -134,8 +134,9 @@ class Lagerview{
 
     for(int x = 0; x < i; x++){
       anzeigeString += '<div id="ergebnis_${x}" class="anzeigeTabelle">'
-          '<div id="bild_${x}" class="anzeigeBilder">'
-          '<button id="anzeigeButtonBearbeiten_${x}" class="anzeigeButtonBearbeiten">Bearbeiten</button>'
+          '<div class=keks>'
+          '<div id="bild_${x}" class="anzeigeBilder">''</div>'
+          '<button id="anzeigeButtonBearbeiten_${x}" class="anzeigeBearbeitenButton">Bearbeiten</button>'
           '</div>'
             '<div id="beschreibung_${x}" class="anzeigeBeschreibungen">'
               '<table>'

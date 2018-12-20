@@ -22,7 +22,7 @@ class Lagercontroller{
     _view.generateHeader();
     _view.generateMainPage();
     _view.generateNewBrick();
-    _view.generateAnzeige(0);
+    _view.generateAnzeige(1);
     _view.generateEditBrick();
     fillMainpageSteine();
     fillEditBrick(st1);
@@ -45,7 +45,15 @@ class Lagercontroller{
 
     //anzeige
 
-    querySelectorAll('.anzeigeButtonBearbeiten').onClick.listen(selectBrickToEdit);
+    querySelector('#anzeigeSearchButton').onClick.listen(anzeigeSuche);
+/*
+    var anzeigen = querySelector('#anzeige').querySelectorAll('.anzeigebearbeitenbutton');
+    anzeigen.forEach((anzeige){
+      anzeige.onClick.listen(selectBrickToEdit);
+    });
+*/
+    querySelector('#anzeigeButtonBearbeiten_0').onClick.listen((MouseEvent e){print('Kekse');});
+    //querySelectorAll('#anzeige .anzeigebearbeitenbutton').onClick.listen(selectBrickToEdit);
     //querySelectorAll('.anzeigeButtonBearbeiten').onClick.listen((MouseEvent e){print('Kekse');});
 
   }
@@ -95,6 +103,45 @@ class Lagercontroller{
     InputElement iE = querySelector('#mainpageSuchfeldElementnummer');
     InputElement iD = querySelector('#mainpageSuchfeldDesignnummer');
     InputElement iN = querySelector('#mainpageSuchfeldName');
+
+    if(iE.value != ""){
+      tmp = iE.value;
+      suchInhalt = true;
+    }
+    else if(iD.value != ""){
+      tmp = iD.value;
+      suchInhalt = true;
+    }
+    else if(iN.value != ""){
+      tmp = iN.value;
+      suchInhalt = true;
+    }
+
+    if(suchInhalt == true){
+
+      ergebnisAnzahl = 3;
+      l.add(st1);
+      l.add(st2);
+      l.add(st3);
+      _model.liste.add(st1);
+      _model.liste.add(st2);
+      _model.liste.add(st3);
+      _view.generateAnzeige(ergebnisAnzahl);
+      if(ergebnisAnzahl == 1)querySelector('#anzeigeErgebnis').text = " " + ergebnisAnzahl.toString() + " Ergebnis für \"" + tmp + "\"";
+      else querySelector('#anzeigeErgebnis').text = " " + ergebnisAnzahl.toString() + " Ergebnisse für \"" + tmp + "\"";
+      fillAnzeige(l, ergebnisAnzahl);
+      gotoAnzeige();
+    }
+  }
+
+  void anzeigeSuche(MouseEvent e){
+    int ergebnisAnzahl;
+    String tmp = "";
+    List<Stein> l = [];
+    bool suchInhalt = false;
+    InputElement iE = querySelector('#anzeigeSuchfeldElementnummer');
+    InputElement iD = querySelector('#anzeigeSuchfeldDesignnummer');
+    InputElement iN = querySelector('#anzeigeSuchfeldName');
 
     if(iE.value != ""){
       tmp = iE.value;
