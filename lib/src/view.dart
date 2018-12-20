@@ -15,7 +15,7 @@ class Lagerview{
 
   void generateHeader(){
     String headerString = "";
-    headerString = '<div id="kopfzeile">Lego Lager<button id="headerButtonMainpage">Startseite</button></div>';
+    headerString = '<div id="kopfzeile"><div id="kopfzeileText">Lego Lager</div><button id="headerButtonMainpage">Startseite</button></div>';
     head.innerHtml = headerString;
   }
 
@@ -122,9 +122,9 @@ class Lagerview{
   void generateAnzeige(int i){
     String anzeigeString = '<div id="anzeigeSuche"> '
         '<div id="anzeigeSuchkategorie">'
-          '<div id="anzeigeSuchkategorieElementnummer"><input id="anzeigeSuchfeldElementnummer"></div>'
-          '<div id="anzeigeSuchkategorieDesignnummer"><input id="anzeigeSuchfeldDesignnummer"></div>'
-          '<div id="anzeigeSuchkategorieName"><input id="anzeigeSuchfeldName"></div>'
+          '<div id="anzeigeSuchkategorieElementnummer">Elementnummer<input id="anzeigeSuchfeldElementnummer"></div>'
+          '<div id="anzeigeSuchkategorieDesignnummer">Designnummer<input id="anzeigeSuchfeldDesignnummer"></div>'
+          '<div id="anzeigeSuchkategorieName">Name<input id="anzeigeSuchfeldName"></div>'
         '</div>'
         '<button id="anzeigeSearchButton">Erneut suchen</button>'
         '<button id="anzeigeAddNewBrickButton">Neuer Stein</button>'

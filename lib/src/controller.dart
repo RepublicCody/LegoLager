@@ -119,13 +119,15 @@ class Lagercontroller{
 
     if(suchInhalt == true){
 
-      ergebnisAnzahl = 3;
+      ergebnisAnzahl = 4;
       l.add(st1);
       l.add(st2);
       l.add(st3);
+      l.add(st4);
       _model.liste.add(st1);
       _model.liste.add(st2);
       _model.liste.add(st3);
+      _model.liste.add(st4);
       _view.generateAnzeige(ergebnisAnzahl);
       if(ergebnisAnzahl == 1)querySelector('#anzeigeErgebnis').text = " " + ergebnisAnzahl.toString() + " Ergebnis für \"" + tmp + "\"";
       else querySelector('#anzeigeErgebnis').text = " " + ergebnisAnzahl.toString() + " Ergebnisse für \"" + tmp + "\"";
@@ -158,13 +160,15 @@ class Lagercontroller{
 
     if(suchInhalt == true){
 
-      ergebnisAnzahl = 3;
+      ergebnisAnzahl = 4;
       l.add(st1);
       l.add(st2);
       l.add(st3);
+      l.add(st4);
       _model.liste.add(st1);
       _model.liste.add(st2);
       _model.liste.add(st3);
+      _model.liste.add(st4);
       _view.generateAnzeige(ergebnisAnzahl);
       if(ergebnisAnzahl == 1)querySelector('#anzeigeErgebnis').text = " " + ergebnisAnzahl.toString() + " Ergebnis für \"" + tmp + "\"";
       else querySelector('#anzeigeErgebnis').text = " " + ergebnisAnzahl.toString() + " Ergebnisse für \"" + tmp + "\"";
